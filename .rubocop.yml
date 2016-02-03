@@ -1,0 +1,18 @@
+Style/Documentation:
+  Enabled: false
+
+Style/AlignParameters:
+  Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
+Style/MultilineOperationIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+Style/MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: indented
+
+Style/CaseIndentation:
+  Enabled: true
+  IndentWhenRelativeTo: end
