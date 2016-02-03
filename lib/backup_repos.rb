@@ -5,7 +5,6 @@ require 'core_ext/string'
 
 require 'backup_repos/config'
 require 'backup_repos/shell'
-require 'backup_repos/github'
 require 'backup_repos/backup'
 require 'backup_repos/version'
 

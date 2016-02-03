@@ -1,10 +1,10 @@
 module BackupRepos
-  module Github
-    class Repository
-      attr_reader :repo
+  module Performers
+    class Base
+      attr_reader :params
 
-      def initialize(repo)
-        @repo = repo
+      def initialize(params)
+        @params = params
       end
 
       def backup
@@ -15,15 +15,15 @@ module BackupRepos
         end
       end
 
-      private
-
       def clone_url
-        repo.ssh_url
+        fail 'Not implemented'
       end
 
       def backup_path
-        "#{repo.full_name}.git"
+        fail 'Not implemented'
       end
+
+      private
 
       def clone_repo
         BackupRepos.shell.run(
@@ -37,7 +37,10 @@ module BackupRepos
       end
 
       def full_backup_path
-        File.join(BackupRepos.config.backup_root, backup_path)
+        backup_root = BackupRepos.config.backup_root
+        fail 'Backup root is not specified!' if backup_root.blank?
+
+        File.join(backup_root, backup_path)
       end
     end
   end

@@ -1,3 +1,6 @@
+require_relative 'performers/base'
+require_relative 'backup_github'
+
 module BackupRepos
   class Backup
     def initialize
@@ -5,8 +8,8 @@ module BackupRepos
       fail 'Backup root is not specified!' if backup_root.blank?
     end
 
-    def backup
-      Github::Backup.process
+    def process
+      BackupGithub.process
     end
   end
 end
