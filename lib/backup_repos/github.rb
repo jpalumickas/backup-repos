@@ -1,5 +1,5 @@
-require 'github/repository'
-require 'github/backup'
+require_relative 'github/repository'
+require_relative 'github/backup'
 
 module BackupRepos
   module Github

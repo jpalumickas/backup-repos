@@ -13,6 +13,12 @@ module BackupRepos
       @config ||= Hashie::Mash.new(YAML.load_file(config_file))
     end
 
+    def backup_root
+      return if config.backup_root.blank?
+
+      File.expand_path(config.backup_root)
+    end
+
     def method_missing(name, *_args)
       config[name.to_s]
     end

@@ -27,7 +27,7 @@ module BackupRepos
 
       def clone_repo
         BackupRepos.shell.run(
-          "git clone --mirror -n #{clone_url} #{backup_path}")
+          "git clone --mirror -n #{clone_url} #{full_backup_path}")
       end
 
       def update_repo
@@ -37,7 +37,7 @@ module BackupRepos
       end
 
       def full_backup_path
-        File.join(config.backup_root, backup_path)
+        File.join(BackupRepos.config.backup_root, backup_path)
       end
     end
   end
