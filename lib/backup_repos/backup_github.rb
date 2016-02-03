@@ -1,5 +1,6 @@
 require_relative 'performers/github_repository'
 require_relative 'performers/github_wiki'
+require_relative 'performers/github_gist'
 
 module BackupRepos
   class BackupGithub
@@ -12,6 +13,7 @@ module BackupRepos
     def process
       process_repositories
       process_wiki
+      process_gist
     end
 
     def repos
@@ -36,6 +38,12 @@ module BackupRepos
       # repos.select(&:has_wiki?).each do |repo_params|
       #   Performers::GithubWiki.new(repo_params).backup
       # end
+    end
+
+    def process_gist
+      client.gists.each do |gist_params|
+        Performers::GithubGist.new(gist_params).backup
+      end
     end
   end
 end
