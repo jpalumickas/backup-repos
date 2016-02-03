@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   if spec.respond_to?(:metadata)
     spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
   else
-    raise 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
+    fail 'RubyGems 2.0 or newer is required to protect against public gem pushes.'
   end
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -27,7 +27,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'hashie', '~> 3.4'
   spec.add_dependency 'octokit', '~> 4.2'
+  spec.add_dependency 'bitbucket_rest_api', '~> 0.1.7'
 
   spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '~> 10.0'
