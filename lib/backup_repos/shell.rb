@@ -16,10 +16,20 @@ module BackupRepos
     end
 
     def execute_command(command)
-      IO.popen(command, 'r') do |io|
+      output = IO.popen(command, 'r', err: [:child, :out]) do |io|
         output = io.read
         log_output(output)
+        output
       end
+
+      [success?(output), output]
+    end
+
+    def success?(output)
+      return false if output =~ /remote error\:/
+      return false if output =~ /fatal\:/
+
+      true
     end
 
     def log_command(command)

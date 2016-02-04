@@ -8,6 +8,8 @@ module BackupRepos
       end
 
       def backup
+        print "Backing up #{backup_path.yellow}: "
+
         if File.exist?(full_backup_path)
           update_repo
         else
@@ -26,13 +28,15 @@ module BackupRepos
       private
 
       def clone_repo
-        BackupRepos.shell.run(
+        success, _output = BackupRepos.shell.run(
           "git clone --mirror -n #{clone_url} #{full_backup_path}")
+        puts success ? 'Successfuly cloned'.green : 'Failed to clone'.red
       end
 
       def update_repo
         FileUtils.cd(full_backup_path) do
-          BackupRepos.shell.run('git remote update')
+          success, _output = BackupRepos.shell.run('git remote update')
+          puts success ? 'Successfuly updated'.green : 'Failed to update'.red
         end
       end
 
