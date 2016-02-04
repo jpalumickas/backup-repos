@@ -1,6 +1,10 @@
 module BackupRepos
   module Performers
     class BitbucketGitRepository < BaseGit
+      def provider
+        'BitBucket'
+      end
+
       def clone_url
         "git@bitbucket.org:#{full_name}.git"
       end

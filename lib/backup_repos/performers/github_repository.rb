@@ -1,6 +1,10 @@
 module BackupRepos
   module Performers
     class GithubRepository < BaseGit
+      def provider
+        'GitHub'
+      end
+
       def clone_url
         params.ssh_url
       end

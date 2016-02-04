@@ -25,6 +25,10 @@ module BackupRepos
         fail 'Not implemented'
       end
 
+      def provider
+        fail 'Not implemented'
+      end
+
       private
 
       def clone_repo
@@ -44,7 +48,7 @@ module BackupRepos
         backup_root = BackupRepos.config.backup_root
         fail 'Backup root is not specified!' if backup_root.blank?
 
-        File.join(backup_root, backup_path)
+        File.join(backup_root, provider, backup_path)
       end
     end
   end
