@@ -6,7 +6,7 @@ module BackupRepos
 
     def run
       program :name, 'Backup Repos'
-      program :version, '0.1.0'
+      program :version, BackupRepos::VERSION
       program :description, 'Backup your repositories to specified directory.'
 
       command :backup do |c|
