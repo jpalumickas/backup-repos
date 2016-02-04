@@ -9,6 +9,8 @@ module BackupRepos
       @options = options
     end
 
+    # === OPTIONS
+
     def debug
       options.debug || config['debug']
     end
@@ -17,6 +19,13 @@ module BackupRepos
       return if backup_root_dir.blank?
       File.expand_path(backup_root_dir)
     end
+
+    def github_access_token
+      config_token = config['github']['access_token'] if config['github']
+      options.github_access_token || config_token
+    end
+
+    # ===
 
     def method_missing(name, *_args)
       config[name.to_s]
@@ -29,7 +38,7 @@ module BackupRepos
     end
 
     def config_file
-      File.join(Dir.home, '.backup_repos')
+      File.join(Dir.home, '.backup-repos')
     end
 
     def file_config
