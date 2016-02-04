@@ -1,6 +1,6 @@
 module BackupRepos
   module Performers
-    class GithubGist < Base
+    class GithubGist < BaseGit
       def clone_url
         params.git_pull_url
       end

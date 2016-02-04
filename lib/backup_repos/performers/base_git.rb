@@ -1,6 +1,6 @@
 module BackupRepos
   module Performers
-    class Base
+    class BaseGit
       attr_reader :params
 
       def initialize(params)

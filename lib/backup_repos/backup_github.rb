@@ -1,3 +1,5 @@
+require 'octokit'
+
 require_relative 'performers/github_repository'
 require_relative 'performers/github_wiki'
 require_relative 'performers/github_gist'

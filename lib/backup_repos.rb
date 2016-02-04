@@ -1,4 +1,3 @@
-require 'octokit'
 require 'colorize'
 
 require 'core_ext/object'

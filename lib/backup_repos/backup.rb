@@ -1,5 +1,6 @@
-require_relative 'performers/base'
+require_relative 'performers/base_git'
 require_relative 'backup_github'
+require_relative 'backup_bitbucket'
 
 module BackupRepos
   class Backup
@@ -14,7 +15,8 @@ module BackupRepos
     def process
       return unless valid?
 
-      BackupGithub.process
+      # BackupGithub.process
+      BackupBitbucket.process
     end
 
     def valid?

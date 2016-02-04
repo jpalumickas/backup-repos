@@ -1,6 +1,6 @@
 module BackupRepos
   module Performers
-    class GithubWiki < Base
+    class GithubWiki < BaseGit
       def clone_url
         "git@github.com:#{params.full_name}.wiki.git"
       end
