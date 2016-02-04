@@ -3,6 +3,7 @@ require 'octokit'
 require 'core_ext/object'
 require 'core_ext/string'
 
+require 'backup_repos/commander'
 require 'backup_repos/config'
 require 'backup_repos/shell'
 require 'backup_repos/backup'
@@ -17,5 +18,9 @@ module BackupRepos
 
   def self.config
     @config ||= BackupRepos::Config.new
+  end
+
+  def self.config=(options = {})
+    @config = BackupRepos::Config.new(options)
   end
 end

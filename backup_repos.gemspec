@@ -10,7 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['jpalumickas@gmail.com']
 
   spec.summary       = 'Backup your repositories'
-  spec.description   = 'Backup your repositories to specified directory.'
+  spec.description   = 'Backup your GitHub, BitBucket repositories to '\
+                       'specified directory.'
   spec.homepage      = "TODO: Put your gem's website or public repo URL here."
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
@@ -24,9 +25,11 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\x0")
     .reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'bin'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables   = ['backup-repos']
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'commander', '~> 4.3'
+  spec.add_dependency 'colorize', '~> 0.7.7'
   spec.add_dependency 'hashie', '~> 3.4'
   spec.add_dependency 'octokit', '~> 4.2'
   spec.add_dependency 'bitbucket_rest_api', '~> 0.1.7'
