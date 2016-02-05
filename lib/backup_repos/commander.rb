@@ -17,7 +17,7 @@ module BackupRepos
         c.option '--debug', String, 'Show debug information'
 
         c.action do |_args, options|
-          BackupRepos.config = options
+          BackupRepos.config_options = options
           BackupRepos::Backup.new.process
         end
       end

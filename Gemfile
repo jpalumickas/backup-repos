@@ -9,4 +9,5 @@ end
 
 group :test do
   gem 'coveralls'
+  gem 'simplecov', require: false
 end

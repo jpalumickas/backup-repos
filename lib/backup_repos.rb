@@ -20,7 +20,7 @@ module BackupRepos
     @config ||= BackupRepos::Config.new
   end
 
-  def self.config=(options = {})
+  def self.config_options=(options = {})
     @config = BackupRepos::Config.new(options)
   end
 end

@@ -5,7 +5,7 @@ module BackupRepos
   class Config
     attr_reader :options
 
-    def initialize(options = {})
+    def initialize(options = Hashie::Mash.new({}))
       @options = options
     end
 
@@ -28,7 +28,7 @@ module BackupRepos
     # ===
 
     def method_missing(name, *_args)
-      config[name.to_s]
+      options.send(name) || config[name.to_s]
     end
 
     private
