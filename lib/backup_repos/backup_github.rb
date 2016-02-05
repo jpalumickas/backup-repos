@@ -33,26 +33,21 @@ module BackupRepos
     end
 
     def process_repositories
-      Performers::GithubRepository.new(repos.first).backup
-
-      # repos.each do |repo_params|
-      #   Performers::GithubRepository.new(repo_params).backup
-      # end
+      repos.each do |repo_params|
+        Performers::GithubRepository.new(repo_params).backup
+      end
     end
 
     def process_wiki
-      repo = repos.detect(&:has_wiki?)
-      Performers::GithubWiki.new(repo).backup
-
-      # repos.select(&:has_wiki?).each do |repo_params|
-      #   Performers::GithubWiki.new(repo_params).backup
-      # end
+      repos.select(&:has_wiki?).each do |repo_params|
+        Performers::GithubWiki.new(repo_params).backup
+      end
     end
 
     def process_gist
-      # client.gists.each do |gist_params|
-      #   Performers::GithubGist.new(gist_params).backup
-      # end
+      client.gists.each do |gist_params|
+        Performers::GithubGist.new(gist_params).backup
+      end
     end
   end
 end

@@ -30,13 +30,9 @@ module BackupRepos
     end
 
     def process_git_repositories
-      repo = git_repos.first
-
-      Performers::BitbucketGitRepository.new(repo).backup
-
-      # git_repos.each do |repo_params|
-      #   Performers::BitbucketGitRepository.new(repo_params).backup
-      # end
+      git_repos.each do |repo_params|
+        Performers::BitbucketGitRepository.new(repo_params).backup
+      end
     end
 
     def process_git_wikis

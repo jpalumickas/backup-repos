@@ -15,7 +15,7 @@ module BackupRepos
     def process
       return unless valid?
 
-      # BackupGithub.process
+      BackupGithub.process
       BackupBitbucket.process
     end
 
