@@ -8,6 +8,7 @@ group :development do
 end
 
 group :test do
+  gem 'codeclimate-test-reporter'
   gem 'coveralls'
   gem 'simplecov', require: false
 end
