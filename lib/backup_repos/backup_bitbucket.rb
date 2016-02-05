@@ -5,12 +5,6 @@ require_relative 'performers/bitbucket_git_wiki'
 
 module BackupRepos
   class BackupBitbucket
-    class << self
-      def process
-        new.process
-      end
-    end
-
     def process
       ask_credentials
       process_git_repositories

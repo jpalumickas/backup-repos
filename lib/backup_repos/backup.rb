@@ -15,8 +15,8 @@ module BackupRepos
     def process
       return unless valid?
 
-      BackupGithub.process
-      BackupBitbucket.process
+      BackupGithub.new.process
+      BackupBitbucket.new.process
     end
 
     def valid?
@@ -37,9 +37,8 @@ module BackupRepos
         errors.push('Backup directory is not specified.') && return
       end
 
-      unless File.exist?(backup_root)
-        errors << 'Backup directory is not exists.'
-      end
+      return if File.exist?(backup_root)
+      errors << 'Backup directory is not exists.'
     end
 
     def inform_about_error!

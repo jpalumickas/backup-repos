@@ -6,12 +6,6 @@ require_relative 'performers/github_gist'
 
 module BackupRepos
   class BackupGithub
-    class << self
-      def process
-        new.process
-      end
-    end
-
     def process
       process_repositories
       process_wiki
