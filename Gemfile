@@ -6,3 +6,7 @@ gemspec
 group :development do
   gem 'pry'
 end
+
+group :test do
+  gem 'coveralls'
+end
