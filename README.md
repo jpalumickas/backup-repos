@@ -1,5 +1,7 @@
 # Backup Repos
 
+[![Join the chat at https://gitter.im/jpalumickas/backup-repos](https://badges.gitter.im/jpalumickas/backup-repos.svg)](https://gitter.im/jpalumickas/backup-repos?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![Gem Version](https://img.shields.io/gem/v/backup_repos.svg?style=flat-square)][rubygems]
 [![Build Status](https://img.shields.io/travis/jpalumickas/backup-repos.svg?style=flat-square)][travis]
 [![Dependency Status](https://img.shields.io/gemnasium/jpalumickas/backup-repos.svg?style=flat-square)][gemnasium]
