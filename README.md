@@ -1,6 +1,7 @@
 # Backup Repos
 
 [![Gem Version](https://img.shields.io/gem/v/backup_repos.svg?style=flat-square)][rubygems]
+[![Gitter](https://img.shields.io/gitter/room/jpalumickas/jpalumickas.svg?style=flat-square)][gitter]
 [![Build Status](https://img.shields.io/travis/jpalumickas/backup-repos.svg?style=flat-square)][travis]
 [![Dependency Status](https://img.shields.io/gemnasium/jpalumickas/backup-repos.svg?style=flat-square)][gemnasium]
 [![Coverage Status](https://img.shields.io/coveralls/jpalumickas/backup-repos.svg?branch=master&style=flat-square)][coveralls]
@@ -38,5 +39,6 @@ See [LICENSE][] for details.
 [gemnasium]: https://gemnasium.com/jpalumickas/backup-repos
 [coveralls]: https://coveralls.io/r/jpalumickas/backup-repos
 [codeclimate]: https://codeclimate.com/github/jpalumickas/backup-repos
+[gitter]: https://gitter.im/jpalumickas/backup-repos
 
 [license]: LICENSE.md
