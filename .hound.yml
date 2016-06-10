@@ -1,0 +1,5 @@
+fail_on_violations: true
+
+ruby:
+  enabled: true
+  config_file: .rubocop.yml
