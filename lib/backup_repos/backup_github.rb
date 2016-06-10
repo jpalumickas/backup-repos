@@ -13,7 +13,7 @@ module BackupRepos
     end
 
     def repos
-      @repos ||= client.repos
+      @repos ||= client.repos.reject { |repo| exclude_repo?(repo) }
     end
 
     def client
@@ -42,6 +42,19 @@ module BackupRepos
       client.gists.each do |gist_params|
         Performers::GithubGist.new(gist_params).backup
       end
+    end
+
+    def exclude_repos
+      @exclude_repos ||= BackupRepos.config.github.exclude.to_a.map(&:downcase)
+    end
+
+    def exclude_repo?(repo)
+      return false if exclude_repos.blank?
+
+      repo_owner = repo.owner.login.to_s.downcase
+      full_name = repo.full_name.to_s.downcase
+
+      exclude_repos.include?(repo_owner) || exclude_repos.include?(full_name)
     end
   end
 end
