@@ -1,6 +1,8 @@
 require_relative 'performers/base_git'
 require_relative 'backup_github'
 require_relative 'backup_bitbucket'
+require_relative 'backup_gitlab_endpoint'
+require_relative 'backup_gitlab'
 
 module BackupRepos
   class Backup
@@ -17,6 +19,7 @@ module BackupRepos
 
       BackupGithub.new.process
       BackupBitbucket.new.process
+      BackupGitlab.new.process
     end
 
     def valid?
