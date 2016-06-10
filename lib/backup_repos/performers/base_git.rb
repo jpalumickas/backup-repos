@@ -1,10 +1,11 @@
 module BackupRepos
   module Performers
     class BaseGit
-      attr_reader :params
+      attr_reader :params, :options
 
-      def initialize(params)
+      def initialize(params, options = {})
         @params = params
+        @options = options
       end
 
       def backup
