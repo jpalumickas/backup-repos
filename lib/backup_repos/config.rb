@@ -31,14 +31,14 @@ module BackupRepos
       options.send(name) || config[name.to_s]
     end
 
+    def config_file
+      File.join(Dir.home, '.backup-repos')
+    end
+
     private
 
     def config
       @config ||= Hashie::Mash.new(file_config)
-    end
-
-    def config_file
-      File.join(Dir.home, '.backup-repos')
     end
 
     def file_config
