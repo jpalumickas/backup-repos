@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['jpalumickas@gmail.com']
 
   spec.summary       = 'Backup your repositories'
-  spec.description   = 'Backup your GitHub, BitBucket repositories to '\
+  spec.description   = 'Backup your GitHub, BitBucket, GitLab repositories to '\
                        'specified directory.'
   spec.homepage      = 'https://github.com/jpalumickas/backup-repos'
 

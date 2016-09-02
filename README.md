@@ -8,7 +8,7 @@
 [![Code Climate](https://img.shields.io/codeclimate/github/jpalumickas/backup-repos.svg?style=flat-square)][codeclimate]
 
 
-Backup your GitHub and BitBucket repositories to specified directory.
+Backup your GitHub, BitBucket and GitLab repositories to specified directory.
 
 ## Installation
 
@@ -18,7 +18,28 @@ $ gem install backup_repos
 
 ## Usage
 
-TODO: Write usage instructions here
+#### Setup your settings
+
+```shell
+$ backup-repos setup
+```
+
+Settings will be written to your home directory `.backup-repos` file.
+
+#### Backup your repositories
+
+Backup all your providers:
+
+```shell
+$ backup-repos backup
+```
+
+Or specify one:
+
+```shell
+$ backup-repos backup github
+```
+
 
 ## Development
 
