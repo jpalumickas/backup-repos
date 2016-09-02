@@ -14,4 +14,18 @@ describe Object do
       expect([1, 2, 3]).to_not be_blank
     end
   end
+
+  describe '#present?' do
+    it 'has false value on nil' do
+      expect(nil).to_not be_present
+    end
+
+    it 'has false value on empty array' do
+      expect([]).to_not be_present
+    end
+
+    it 'has true value on array with values' do
+      expect([1, 2, 3]).to be_present
+    end
+  end
 end
