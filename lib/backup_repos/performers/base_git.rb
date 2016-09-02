@@ -19,22 +19,24 @@ module BackupRepos
       end
 
       def clone_url
-        fail 'Not implemented'
+        raise 'Not implemented'
       end
 
       def backup_path
-        fail 'Not implemented'
+        raise 'Not implemented'
       end
 
       def provider
-        fail 'Not implemented'
+        raise 'Not implemented'
       end
 
       private
 
       def clone_repo
         success, _output = BackupRepos.shell.run(
-          "git clone --mirror -n #{clone_url} #{full_backup_path}")
+          "git clone --mirror -n #{clone_url} #{full_backup_path}"
+        )
+
         puts success ? 'Successfuly cloned'.green : 'Failed to clone'.red
       end
 
@@ -47,7 +49,7 @@ module BackupRepos
 
       def full_backup_path
         backup_root = BackupRepos.config.backup_root
-        fail 'Backup root is not specified!' if backup_root.blank?
+        raise 'Backup root is not specified!' if backup_root.blank?
 
         File.join(backup_root, provider, backup_path)
       end

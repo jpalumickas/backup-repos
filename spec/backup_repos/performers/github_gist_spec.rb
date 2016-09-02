@@ -29,8 +29,10 @@ describe BackupRepos::Performers::GithubGist do
     context 'without owner' do
       let(:options) do
         double(
-          id: 1234, git_pull_url: 'https://gist.github.com/test/1234',
-          owner: nil)
+          id: 1234,
+          git_pull_url: 'https://gist.github.com/test/1234',
+          owner: nil
+        )
       end
 
       it 'has correct backup path value' do
