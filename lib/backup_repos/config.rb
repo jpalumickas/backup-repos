@@ -28,7 +28,11 @@ module BackupRepos
     # ===
 
     def method_missing(name, *_args)
-      options.send(name) || config[name.to_s]
+      options.send(name) || config[name.to_s] || super
+    end
+
+    def respond_to_missing?(name, include_private = false)
+      options.respond_to?(name) || config.key?(name.to_s) || super
     end
 
     def config_file

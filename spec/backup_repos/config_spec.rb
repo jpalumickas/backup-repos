@@ -53,6 +53,12 @@ describe BackupRepos::Config do
     end
   end
 
+  describe '#respond_to_missing?' do
+    it 'has correct value from config' do
+      expect(subject.respond_to?(:test)).to eq(true)
+    end
+  end
+
   describe '#config_file' do
     it 'has correct config file' do
       allow(Dir).to receive(:home).and_return('home_dir')
