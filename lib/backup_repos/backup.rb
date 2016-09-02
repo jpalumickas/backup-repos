@@ -15,10 +15,23 @@ module BackupRepos
     end
 
     def process
-      return unless valid?
+      process_github
+      process_bitbucket
+      process_gitlab
+    end
 
+    def process_github
+      return unless valid?
       BackupGithub.new.process
+    end
+
+    def process_bitbucket
+      return unless valid?
       BackupBitbucket.new.process
+    end
+
+    def process_gitlab
+      return unless valid?
       BackupGitlab.new.process
     end
 
@@ -41,7 +54,7 @@ module BackupRepos
       end
 
       return if File.exist?(backup_root)
-      errors << 'Backup directory is not exists.'
+      errors << 'Backup directory does not exists.'
     end
 
     def inform_about_error!
