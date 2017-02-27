@@ -68,7 +68,7 @@ module BackupRepos
         cli.say '  What is your GitHub access token?'
         access_token = cli.ask '    Access Token: '
         exclude_repositories = cli.ask(
-          '   Exclude repositories (separate by space):  ', Array
+          '   Exclude repositories or organizations (separate by space):  ', Array
         )
 
         @config[:github][:access_token] = access_token if access_token.present?
