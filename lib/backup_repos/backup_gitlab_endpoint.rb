@@ -5,10 +5,12 @@ require_relative 'performers/gitlab_repository'
 
 module BackupRepos
   class BackupGitlabEndpoint
+    DEFAULT_ENDPOINT = 'https://gitlab.com/api/v4'.freeze
+
     attr_reader :endpoint, :private_token
 
     def initialize(settings)
-      @endpoint = settings.endpoint
+      @endpoint = settings.endpoint || DEFAULT_ENDPOINT
       @private_token = settings.private_token
     end
 
@@ -17,7 +19,7 @@ module BackupRepos
     end
 
     def repos
-      @repos ||= client.projects.auto_paginate
+      @repos ||= client.projects(membership: true).auto_paginate
     end
 
     def client
