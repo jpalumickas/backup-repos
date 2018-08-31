@@ -17,6 +17,7 @@ module BackupRepos
 
         c.option '--backup_root DIR', String, 'Backup destination directory'
         c.option '--debug', String, 'Show debug information'
+        c.option '--only LIST', String, 'Only backup specified repos or orgs. Separate by comma.'
 
         c.action do |args, options|
           BackupRepos.config_options = options

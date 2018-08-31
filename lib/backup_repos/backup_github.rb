@@ -9,7 +9,7 @@ module BackupRepos
     def process
       process_repositories
       process_wiki
-      process_gist
+      process_gist if backup_gist?
     end
 
     def repos
@@ -49,12 +49,23 @@ module BackupRepos
     end
 
     def exclude_repo?(repo)
-      return false if exclude_repos.blank?
+      allow_list = BackupRepos.config.only_list
+      if allow_list.present?
+        return !repo_exists?(allow_list, repo)
+      end
 
+      return false if exclude_repos.blank?
+      repo_exists?(exclude_repos, repo)
+    end
+
+    def repo_exists?(list, repo)
       repo_owner = repo.owner.login.to_s.downcase
       full_name = repo.full_name.to_s.downcase
+      list.include?(repo_owner) || list.include?(full_name)
+    end
 
-      exclude_repos.include?(repo_owner) || exclude_repos.include?(full_name)
+    def backup_gist?
+      BackupRepos.config.only_list.blank?
     end
   end
 end

@@ -25,6 +25,11 @@ module BackupRepos
       options.github_access_token || config_token
     end
 
+    def only_list
+      return if options.only.blank?
+      options.only.split(',').map(&:strip)
+    end
+
     # ===
 
     def method_missing(name, *_args)
