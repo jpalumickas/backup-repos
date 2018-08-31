@@ -3,6 +3,7 @@ require 'colorize'
 require 'core_ext/object'
 require 'core_ext/string'
 
+require 'backup_repos/mash'
 require 'backup_repos/commander'
 require 'backup_repos/config'
 require 'backup_repos/shell'

@@ -34,7 +34,7 @@ Backup all your providers:
 $ backup-repos backup
 ```
 
-Or specify one:
+Or specify one provider:
 
 ```shell
 $ backup-repos backup github
@@ -52,7 +52,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Bug reports and pull requests are welcome on GitHub at https://github.com/jpalumickas/backup-repos.
 
 ## Copyright
-Copyright (c) 2017 Justas Palumickas.
+Copyright (c) 2018 Justas Palumickas.
 See [LICENSE][] for details.
 
 [rubygems]: https://rubygems.org/gems/backup_repos

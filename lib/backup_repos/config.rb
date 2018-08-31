@@ -5,7 +5,7 @@ module BackupRepos
   class Config
     attr_reader :options
 
-    def initialize(options = Hashie::Mash.new({}))
+    def initialize(options = BackupRepos::Mash.new({}))
       @options = options
     end
 
@@ -42,7 +42,7 @@ module BackupRepos
     private
 
     def config
-      @config ||= Hashie::Mash.new(file_config)
+      @config ||= BackupRepos::Mash.new(file_config)
     end
 
     def file_config
