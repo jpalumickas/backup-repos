@@ -1,7 +1,7 @@
 # Backup Repos
 
 [![Gem Version](https://img.shields.io/gem/v/backup_repos.svg?style=flat-square)][rubygems]
-[![Coverage Status](https://img.shields.io/coveralls/jpalumickas/backup-repos.svg?branch=master&style=flat-square)][coveralls]
+[![Coverage Status](https://img.shields.io/codecov/c/github/jpalumickas/backup-repos?style=flat-square)][codecov]
 
 
 Backup your GitHub, BitBucket and GitLab repositories to specified directory.
@@ -52,6 +52,6 @@ Copyright (c) 2019 Justas Palumickas.
 See [LICENSE][] for details.
 
 [rubygems]: https://rubygems.org/gems/backup_repos
-[coveralls]: https://coveralls.io/r/jpalumickas/backup-repos
+[codecov]: https://codecov.io/gh/jpalumickas/backup-repos
 
 [license]: LICENSE.md
