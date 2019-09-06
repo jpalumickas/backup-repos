@@ -1,11 +1,7 @@
 # Backup Repos
 
 [![Gem Version](https://img.shields.io/gem/v/backup_repos.svg?style=flat-square)][rubygems]
-[![Gitter](https://img.shields.io/gitter/room/jpalumickas/jpalumickas.svg?style=flat-square)][gitter]
-[![Build Status](https://img.shields.io/travis/jpalumickas/backup-repos.svg?style=flat-square)][travis]
-[![Dependency Status](https://img.shields.io/gemnasium/jpalumickas/backup-repos.svg?style=flat-square)][gemnasium]
 [![Coverage Status](https://img.shields.io/coveralls/jpalumickas/backup-repos.svg?branch=master&style=flat-square)][coveralls]
-[![Code Climate](https://img.shields.io/codeclimate/github/jpalumickas/backup-repos.svg?style=flat-square)][codeclimate]
 
 
 Backup your GitHub, BitBucket and GitLab repositories to specified directory.
@@ -52,14 +48,10 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 Bug reports and pull requests are welcome on GitHub at https://github.com/jpalumickas/backup-repos.
 
 ## Copyright
-Copyright (c) 2018 Justas Palumickas.
+Copyright (c) 2019 Justas Palumickas.
 See [LICENSE][] for details.
 
 [rubygems]: https://rubygems.org/gems/backup_repos
-[travis]: http://travis-ci.org/jpalumickas/backup-repos
-[gemnasium]: https://gemnasium.com/jpalumickas/backup-repos
 [coveralls]: https://coveralls.io/r/jpalumickas/backup-repos
-[codeclimate]: https://codeclimate.com/github/jpalumickas/backup-repos
-[gitter]: https://gitter.im/jpalumickas/backup-repos
 
 [license]: LICENSE.md
