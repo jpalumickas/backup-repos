@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'gitlab'
 require 'uri'
 
@@ -5,7 +7,7 @@ require_relative 'performers/gitlab_repository'
 
 module BackupRepos
   class BackupGitlabEndpoint
-    DEFAULT_ENDPOINT = 'https://gitlab.com/api/v4'.freeze
+    DEFAULT_ENDPOINT = 'https://gitlab.com/api/v4'
 
     attr_reader :endpoint, :private_token
 

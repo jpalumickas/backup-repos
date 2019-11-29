@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BackupRepos
   module Performers
     class GithubRepository < BaseGit

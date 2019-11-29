@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BackupRepos
   module CLI
     class Setup
@@ -93,14 +95,11 @@ module BackupRepos
           '   Exclude repositories or organizations (separate by space):  ', Array
         )
 
-
         config = {}
         config[:endpoint] = endpoint if endpoint.present?
         config[:private_token] = private_token if private_token.present?
 
-        if exclude_repositories.present?
-          config[:exclude] = exclude_repositories
-        end
+        config[:exclude] = exclude_repositories if exclude_repositories.present?
 
         @config[:gitlab] << config
       end

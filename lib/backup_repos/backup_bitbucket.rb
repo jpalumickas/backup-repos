@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'bitbucket_rest_api'
 
 require_relative 'performers/bitbucket_git_repository'

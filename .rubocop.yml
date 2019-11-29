@@ -1,9 +1,6 @@
 AllCops:
   TargetRubyVersion: 2.6
 
-Rails:
-  Enabled: false
-
 Style/Documentation:
   Enabled: false
 
@@ -21,4 +18,4 @@ Style/MultilineMethodCallIndentation:
 
 Style/CaseIndentation:
   Enabled: true
-  IndentWhenRelativeTo: end
+  EnforcedStyle: end

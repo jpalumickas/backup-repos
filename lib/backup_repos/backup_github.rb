@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'octokit'
 
 require_relative 'performers/github_repository'
@@ -50,11 +52,10 @@ module BackupRepos
 
     def exclude_repo?(repo)
       allow_list = BackupRepos.config.only_list
-      if allow_list.present?
-        return !repo_exists?(allow_list, repo)
-      end
+      return !repo_exists?(allow_list, repo) if allow_list.present?
 
       return false if exclude_repos.blank?
+
       repo_exists?(exclude_repos, repo)
     end
 

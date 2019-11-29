@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'commander'
 
 require_relative 'cli/setup'
@@ -22,7 +24,7 @@ module BackupRepos
         c.action do |args, options|
           BackupRepos.config_options = options
 
-          if args[0] && %w(github bitbucket gitlab).include?(args[0].downcase)
+          if args[0] && %w[github bitbucket gitlab].include?(args[0].downcase)
             BackupRepos::Backup.new.send("process_#{args[0]}")
           else
             BackupRepos::Backup.new.process

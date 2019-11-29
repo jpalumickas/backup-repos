@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'performers/base_git'
 require_relative 'backup_github'
 require_relative 'backup_bitbucket'
@@ -60,6 +62,7 @@ module BackupRepos
       end
 
       return if File.exist?(backup_root)
+
       errors << 'Backup directory does not exists.'
     end
 

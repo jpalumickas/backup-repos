@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module BackupRepos
   class Shell
     def initialize(opts = {})
@@ -16,7 +18,7 @@ module BackupRepos
     end
 
     def execute_command(command)
-      output = IO.popen(command, 'r', err: [:child, :out]) do |io|
+      output = IO.popen(command, 'r', err: %i[child out]) do |io|
         output = io.read
         log_output(output)
         output

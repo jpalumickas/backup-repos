@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yaml'
 require 'hashie/mash'
 
@@ -17,6 +19,7 @@ module BackupRepos
 
     def backup_root
       return if backup_root_dir.blank?
+
       File.expand_path(backup_root_dir)
     end
 
@@ -27,6 +30,7 @@ module BackupRepos
 
     def only_list
       return if options.only.blank?
+
       options.only.split(',').map(&:strip)
     end
 
@@ -58,6 +62,7 @@ module BackupRepos
 
     def file_config
       return {} unless File.exist?(config_file)
+
       @file_config ||= (YAML.load_file(config_file) || {})
     end
 
