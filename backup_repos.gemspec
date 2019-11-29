@@ -20,6 +20,8 @@ Gem::Specification.new do |spec|
   spec.executables   = ['backup-repos']
   spec.require_paths = ['lib']
 
+  spec.required_ruby_version = '>= 2.4.0'
+
   spec.add_dependency 'highline', '~> 2.0'
   spec.add_dependency 'bitbucket_rest_api', '~> 0.1.7'
   spec.add_dependency 'colorize', '~> 0.8.1'
