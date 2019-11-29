@@ -33,6 +33,10 @@ module BackupRepos
         if cli.agree '* Are you want to backup BitBucket repositories?'
           configure_bitbucket
         end
+
+        if cli.agree '* Are you want to backup GitLab repositories?'
+          configure_gitlab
+        end
       end
 
       def configure_backup_directory
@@ -76,6 +80,29 @@ module BackupRepos
         if exclude_repositories.present?
           @config[:github][:exclude] = exclude_repositories
         end
+      end
+
+      def configure_gitlab
+        @config[:gitlab] ||= []
+
+        cli.say '  GitLab Endpoint. Use this for self-hosted GitLab or press Enter to skip.'
+        endpoint = cli.ask '    Endpoint: '
+        cli.say '  What is your GitLab private token?'
+        private_token = cli.ask '    Private Token: '
+        exclude_repositories = cli.ask(
+          '   Exclude repositories or organizations (separate by space):  ', Array
+        )
+
+
+        config = {}
+        config[:endpoint] = endpoint if endpoint.present?
+        config[:private_token] = private_token if private_token.present?
+
+        if exclude_repositories.present?
+          config[:exclude] = exclude_repositories
+        end
+
+        @config[:gitlab] << config
       end
 
       def configure_bitbucket
