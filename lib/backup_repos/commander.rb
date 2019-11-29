@@ -17,7 +17,8 @@ module BackupRepos
         c.syntax = 'backup-repos backup'
         c.description = 'Backup your repositories.'
 
-        c.option '--backup_root DIR', String, 'Backup destination directory'
+        c.option '--config-path PATH', String, 'Path to configuration file'
+        c.option '--backup-root DIR', String, 'Backup destination directory'
         c.option '--debug', String, 'Show debug information'
         c.option '--only LIST', String, 'Only backup specified repos or orgs. Separate by comma.'
 

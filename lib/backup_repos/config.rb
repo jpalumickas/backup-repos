@@ -47,7 +47,9 @@ module BackupRepos
     end
 
     def config_file
-      File.join(Dir.home, '.backup-repos')
+      return File.join(Dir.home, '.backup-repos') if options.config_path.blank?
+
+      File.expand_path(options.config_path)
     end
 
     def dig(*args)
