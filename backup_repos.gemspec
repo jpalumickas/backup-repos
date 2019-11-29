@@ -20,11 +20,12 @@ Gem::Specification.new do |spec|
   spec.executables   = ['backup-repos']
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'highline', '~> 2.0'
   spec.add_dependency 'bitbucket_rest_api', '~> 0.1.7'
   spec.add_dependency 'colorize', '~> 0.8.1'
   spec.add_dependency 'commander', '~> 4.4'
   spec.add_dependency 'gitlab', '~> 4.12'
-  spec.add_dependency 'hashie', '~> 3.6'
+  spec.add_dependency 'hashie', '~> 4.0'
   spec.add_dependency 'octokit', '~> 4.14'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
