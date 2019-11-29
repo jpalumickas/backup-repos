@@ -19,8 +19,8 @@ module BackupRepos
 
     def ask_credentials
       cli = HighLine.new
-      @username = cli.ask('BitBucket Username: ')
-      @password = cli.ask('BitBucket Password:  ') { |q| q.echo = false }
+      @username = BackupRepos.config.dig('bitbucket', 'username') || cli.ask('BitBucket Username: ')
+      @password = BackupRepos.config.dig('bitbucket', 'password') || cli.ask('BitBucket Password:  ') { |q| q.echo = false }
     end
 
     def process_git_repositories
