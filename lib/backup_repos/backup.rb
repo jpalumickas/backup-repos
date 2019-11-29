@@ -22,16 +22,22 @@ module BackupRepos
 
     def process_github
       return unless valid?
+      return unless BackupRepos.config.github_access_token
+
       BackupGithub.new.process
     end
 
     def process_bitbucket
       return unless valid?
+      return unless BackupRepos.config.bitbucket
+
       BackupBitbucket.new.process
     end
 
     def process_gitlab
       return unless valid?
+      return unless BackupRepos.config.gitlab
+
       BackupGitlab.new.process
     end
 
