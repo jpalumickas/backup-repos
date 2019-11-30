@@ -15,8 +15,8 @@ Gem::Specification.new do |spec|
                        'specified directory.'
   spec.homepage      = 'https://github.com/jpalumickas/backup-repos'
 
-  spec.files         = `git ls-files -z`.split("\x0")
-    .reject { |f| f.match(%r{^(test|spec|features)/}) }
+  spec.files = Dir['*.{md,txt}', 'LICENSE', '{lib}/**/*', 'bin/backup-repos']
+
   spec.bindir        = 'bin'
   spec.executables   = ['backup-repos']
   spec.require_paths = ['lib']
