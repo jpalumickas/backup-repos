@@ -20,7 +20,7 @@ module BackupRepos
       private
 
       def write_config
-        File.write(BackupRepos.config.config_file, YAML.dump(config))
+        File.write(backup_config.config_file, YAML.dump(config))
       end
 
       def configure_from_options
@@ -47,7 +47,7 @@ module BackupRepos
           q.readline = true
           q.completion = Pathname
           q.directory = Pathname.new('/')
-          q.default = BackupRepos.config.backup_root
+          q.default = backup_config.backup_root
           q.glob = '*'
         end
 
@@ -118,6 +118,10 @@ module BackupRepos
 
       def cli
         @cli ||= HighLine.new
+      end
+
+      def backup_config
+        @backup_config || BackupRepos::Config.new(options)
       end
     end
   end
