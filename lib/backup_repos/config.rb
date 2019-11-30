@@ -70,6 +70,8 @@ module BackupRepos
     end
 
     def backup_root_dir
+     return File.expand_path(ENV['BACKUP_DIR']) if ENV['BACKUP_DIR'].present?
+
       options.backup_root || config['backup_root']
     end
   end
